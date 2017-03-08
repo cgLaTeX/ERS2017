@@ -68,7 +68,7 @@ linewidth=2pt % Width of the border lines around content boxes
   \input{sections/introduction}
 }
 
-\headerbox{Results 1}{name=results,column=2,span=2,row=0,bottomaligned=objectives}{
+\headerbox{Results 1}{name=results1,column=2,span=2,row=0,bottomaligned=objectives}{
   \input{sections/results1}
 }
 
@@ -78,7 +78,7 @@ linewidth=2pt % Width of the border lines around content boxes
 }
 
 
-\headerbox{Conclusion}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
+\headerbox{Conclusion}{name=conclusion,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
   \input{sections/conclusion}
 }
 
@@ -88,15 +88,15 @@ linewidth=2pt % Width of the border lines around content boxes
 }
 
 
-\headerbox{Results 2}{name=conclusion,column=1,span=1,row=0,below=results,above=references}{
+\headerbox{Results 2}{name=results2,column=1,span=1,row=0,below=results1,above=references}{
   \input{sections/results2}
 }
 
-\headerbox{Problem Statement}{name=problem statement,column=0,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+\headerbox{Problem Statement}{name=problem statement,column=0,below=objectives,bottomaligned=results2}{ % This block's bottom aligns with the bottom of the conclusion block
   \input{sections/problem_statement}
 }
 
-\headerbox{Rotating Frame Approximation}{name=results2,column=2,span=2,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+\headerbox{Rotating Frame Approximation}{name=results2,column=2,span=2,below=objectives,bottomaligned=results2}{ % This block's bottom aligns with the bottom of the conclusion block
   \input{sections/rwa}
 }
 
