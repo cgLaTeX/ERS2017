@@ -1,23 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% baposter Landscape Poster
-% LaTeX Template
-% Version 1.0 (11/06/13)
-%
-% baposter Class Created by:
-% Brian Amberg (baposter@brian-amberg.de)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
 
 \usepackage{graphicx} % Required for including images
@@ -25,7 +5,7 @@
 
 \usepackage{amsmath} % For typesetting math
 \usepackage{amssymb} % Adds new symbols to be used in math mode
-
+\usepackage{physics}
 \usepackage{booktabs} % Top and bottom rules for tables
 \usepackage{enumitem} % Used to reduce itemize/enumerate spacing
 \usepackage{palatino} % Use the Palatino font
@@ -44,7 +24,7 @@
 \setlength{\parsep}{0pt}
 }
 
-\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+\definecolor{spartangreen}{RGB}{24,69,59} % Defines the color used for content box headers
 
 \begin{document}
 
@@ -54,9 +34,9 @@ headerborder=closed, % Adds a border around the header of content boxes
 colspacing=1em, % Column spacing
 bgColorOne=white, % Background color for the gradient on the left side of the poster
 bgColorTwo=white, % Background color for the gradient on the right side of the poster
-borderColor=lightblue, % Border color
+borderColor=spartangreen, % Border color
 headerColorOne=black, % Background color for the header in the content boxes (left side)
-headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
+headerColorTwo=spartangreen, % Background color for the header in the content boxes (right side)
 headerFontColor=white, % Text color for the header text in the content boxes
 boxColorOne=white, % Background color of the content boxes
 textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
@@ -72,24 +52,22 @@ linewidth=2pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 %
 {\includegraphics[height=4em]{logo.png}} % First university/lab logo on the left
-{\bf\textsc{Unnecessarily Complicated Research Title}\vspace{0.5em}} % Poster title
-{\textsc{\{ John Smith, James Smith and Jane Smith \} \hspace{12pt} University and Department Name}} % Author names and institution
+{\bf\textsc{Quantum Electrodynamics: A Microscopic Formulation of the Maxwell-Bloch equations}\vspace{0.2em}} % Poster title
+{\textsc{Connor Glosser, Jack Hamel, B. Shanker, and Carlo Piermarocchi}} % Author names and institution
 {\includegraphics[height=4em]{logo.png}} % Second university/lab logo on the right
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
-\headerbox{Objectives}{name=objectives,column=0,row=0}{
+\headerbox{Objectives}{name=objectives,column=1,row=0}{
 
-Donec non nisl a \textbf{arcu consequat} varius. Sed suscipit cursus luctus. Nulla sit amet elit augue. Curabitur scelerisque mollis dolor, quis blandit lorem condimentum at. Pellentesque sed nibh vel \textbf{dolor} sagittis semper. 
+
 
 \begin{enumerate}\compresslist
-\item Feugiat vitae elit
-\item bibendum ante sed lacinia eros in
-\item Curabitur scelerisque arcu consequat varius
-\item Dapibus nulla id purus consectetur
-\item Fringilla integer 
+\item Employ fast and accurate methods for calculating the dynamics of partial order and disordered quantum dot systems.
+\item Calculate classical electric field radiation using semiclassical methods.
+\item Investigate lasing effects, coupled Rabi oscillations, nonlinear propagation, and other optical phenomena seen in the system's dynamics. 
 \end{enumerate}
 
 \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
@@ -99,16 +77,16 @@ Donec non nisl a \textbf{arcu consequat} varius. Sed suscipit cursus luctus. Nul
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\headerbox{Introduction}{name=introduction,column=1,row=0,bottomaligned=objectives}{
+\headerbox{Introduction}{name=introduction,column=0,row=0,bottomaligned=objectives}{
 
-Aliquam non lacus dolor, \textit{a aliquam quam}. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
+The dynamics of ordered quantum dot systems can be described using analytic methods similar to those used in electronic transport theories.  Those techniques do not work well when attempting to describe systems with disorder or partial order.  We are using an integral approach to the full-wave framework that describes the dynamics of these more realistic systems, which allows direct communication between quantum dots in the system.
 }
 
 %----------------------------------------------------------------------------------------
 %	RESULTS 1
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results 1}{name=results,column=2,span=2,row=0}{
+\headerbox{Results 1}{name=results,column=2,span=2,row=0,bottomaligned=objectives}{
 
 \begin{multicols}{2}
 \vspace{1em}
@@ -148,10 +126,10 @@ Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci lu
 }}
 
 %----------------------------------------------------------------------------------------
-%	FUTURE RESEARCH
+%	Conclusion
 %----------------------------------------------------------------------------------------
 
-\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
+\headerbox{Conclusion}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
 
 \begin{multicols}{2}
 Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
@@ -174,10 +152,10 @@ Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendiss
 }
 
 %----------------------------------------------------------------------------------------
-%	CONCLUSION
+%	something
 %----------------------------------------------------------------------------------------
 
-\headerbox{Conclusion}{name=conclusion,column=2,span=2,row=0,below=results,above=references}{
+\headerbox{something goes here}{name=conclusion,column=1,span=1,row=0,below=results,above=references}{
 
 \begin{multicols}{2}
 
@@ -212,40 +190,38 @@ Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendiss
 }
 
 %----------------------------------------------------------------------------------------
-%	MATERIALS AND METHODS
+%	Problem Statement
 %----------------------------------------------------------------------------------------
 
-\headerbox{Materials \& Methods}{name=method,column=0,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+\headerbox{Problem Statement}{name=method,column=0,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
 
-The following materials were required to complete the research:
-
-\begin{itemize}\compresslist
-\item Curabitur pellentesque dignissim
-\item Eu facilisis est tempus quis
-\item Duis porta consequat lorem
-\item Eu facilisis est tempus quis
-\end{itemize}
-
-The following equations were used for statistical analysis:
-
+We wish to calculate the dynamics of a system of N two-level quantum dots with transition frequency, $\omega_0$, among radiation with frequency $\omega_L$, where $\omega_0 \approx \omega_L$.  We start by formulating a density matrix with the Louiville-von Neumann equation
 \begin{equation}
-\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-\label{eq:refname}
-\end{equation}\
-
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
+  i \hbar \pdv{\hat{\rho}}{t} = \commutator{\hat{\mathcal{H}}(t)}{\hat{\rho}} - i \hbar \hat{\mathcal{D}}\qty[\hat{\rho}]
+  \label{eq:liouville}
 \end{equation}
-
-Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
+where $\hat{\mathcal{H}}$ and $\hat{\mathcal{D}}$ are the Hamiltonian and Dissipator operators of the system.
+\begin{subequations}
+  \begin{align}
+    \hat{\mathcal{H}}(t) &\equiv \mqty(0 & \hbar \chi(t) \\ \hbar \chi^*(t) & \hbar \omega_0) \label{eq:hamiltonian} \\
+    \hat{\mathcal{D}}[\hat{\rho}] &\equiv \mqty((\rho_{00} - 1)/T_1 & \rho_{01}/T_2 \\ \rho_{10}/T_2 & \rho_{11}/T_1) \label{eq:dissipator}
+  \end{align}
+\end{subequations}
+where $\chi(t) \equiv \vb{d} \cdot \vb{E}/\hbar$. Therefore, in order to calculate these matrices, the electric field must be calculated using the electric dyadic Green's function
+\begin{gather}
+    \vb{E}(\vb{r}, t) = \vb{E}_0(\vb{r}, t) - \frac{\mu_0}{4\pi} \int
+      \qty(I - 3\bar{\vb{r}}\bar{\vb{r}}) \frac{c^2 \vb{P}(\vb{r}', t_R)}{\abs{\vb{r} - \vb{r}'}^3} + \nonumber \\
+      \qty(I - 3\bar{\vb{r}}\bar{\vb{r}}) \frac{c \dot{\vb{P}}(\vb{r}', t_R)}{\abs{\vb{r} - \vb{r}'}^2} +
+      \qty(I -  \bar{\vb{r}}\bar{\vb{r}}) \frac{\ddot{\vb{P}}(\vb{r}', t_R)}{\abs{\vb{r} - \vb{r}'}} \dd[3]{\vb{r}'}
+  \label{eq:efield}
+\end{gather}
 }
 
 %----------------------------------------------------------------------------------------
 %	RESULTS 2
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results 2}{name=results2,column=1,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+\headerbox{Results 2}{name=results2,column=2,span=2,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
 
 Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
 
