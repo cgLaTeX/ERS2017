@@ -1,0 +1,20 @@
+We wish to calculate the dynamics of a system of N two-level quantum dots with transition frequency, $\omega_0$, among radiation with frequency $\omega_L$, where $\omega_0 \approx \omega_L$.  We start by formulating a density matrix with the Louiville-von Neumann equation
+\begin{equation}
+  i \hbar \pdv{\hat{\rho}}{t} = \commutator{\hat{\mathcal{H}}(t)}{\hat{\rho}} - i \hbar \hat{\mathcal{D}}\qty[\hat{\rho}]
+  \label{eq:liouville}
+\end{equation}
+where $\hat{\mathcal{H}}$ and $\hat{\mathcal{D}}$ are the Hamiltonian and Dissipator operators of the system.
+\begin{subequations}
+  \begin{align}
+    \hat{\mathcal{H}}(t) &\equiv \mqty(0 & \hbar \chi(t) \\ \hbar \chi^*(t) & \hbar \omega_0) \label{eq:hamiltonian} \\
+    \hat{\mathcal{D}}[\hat{\rho}] &\equiv \mqty((\rho_{00} - 1)/T_1 & \rho_{01}/T_2 \\ \rho_{10}/T_2 & \rho_{11}/T_1) \label{eq:dissipator}
+  \end{align}
+\end{subequations}
+where $\chi(t) \equiv \vb{d} \cdot \vb{E}/\hbar$. Therefore, in order to calculate these matrices, the electric field must be calculated using the electric dyadic Green's function
+\begin{gather}
+    \vb{E}(\vb{r}, t) = \vb{E}_0(\vb{r}, t) - \frac{\mu_0}{4\pi} \int
+      \qty(I - 3\bar{\vb{r}}\bar{\vb{r}}) \frac{c^2 \vb{P}(\vb{r}', t_R)}{\abs{\vb{r} - \vb{r}'}^3} + \nonumber \\
+      \qty(I - 3\bar{\vb{r}}\bar{\vb{r}}) \frac{c \dot{\vb{P}}(\vb{r}', t_R)}{\abs{\vb{r} - \vb{r}'}^2} +
+      \qty(I -  \bar{\vb{r}}\bar{\vb{r}}) \frac{\ddot{\vb{P}}(\vb{r}', t_R)}{\abs{\vb{r} - \vb{r}'}} \dd[3]{\vb{r}'}
+  \label{eq:efield}
+\end{gather}
