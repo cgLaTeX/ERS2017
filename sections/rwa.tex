@@ -11,11 +11,7 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \bottomrule
 \end{tabular}
 \captionof{table}{Table caption}
-\end{center}
 
-Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo.
-
-\begin{center}
 \begin{tabular}{l l l}
 \toprule
 \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
@@ -27,3 +23,15 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \end{tabular}
 \captionof{table}{Table caption}
 \end{center}
+
+\begin{equation}
+  \begin{gathered}
+    \tilde{\vb{E}}_\text{rad}(\vb{r}, t) = -\frac{1}{4\pi \varepsilon} \int
+    \qty(\mathrm{I} -  \bar{\vb{r}}\bar{\vb{r}}^\dagger) \cdot \frac{\qty(\partial_t^2 \tilde{\vb{P}}(\vb{r}', t_R) + 2 i \omega_L \partial_t \tilde{\vb{P}}(\vb{r}', t_R) - \omega_L^2 \tilde{\vb{P}}(\vb{r}', t_R)) e^{-i \omega_L \abs{\vb{r} - \vb{r}'}/c}}{c^2 \abs{\vb{r}-\vb{r}'}} + \\
+    \qty(\mathrm{I} - 3\bar{\vb{r}}\bar{\vb{r}}^\dagger) \cdot \frac{\qty(\partial_t \tilde{\vb{P}}(\vb{r}', t_R) + i \omega_L \tilde{\vb{P}}(\vb{r}', t_R))e^{-i \omega_L \abs{\vb{r} - \vb{r}'}/c}}{c \abs{\vb{r}-\vb{r}'}^2} +
+    \qty(\mathrm{I} - 3\bar{\vb{r}}\bar{\vb{r}}^\dagger) \cdot \frac{                \tilde{\vb{P}}(\vb{r}', t_R) e^{-i \omega_L \abs{\vb{r} - \vb{r}'}/c}}{\abs{\vb{r}-\vb{r}'}^3}
+    \, \dd[3]{\vb{r'}}.
+  \end{gathered}
+  \label{eq:radiated envelope}
+\end{equation}
+

@@ -18,6 +18,8 @@
 \usepackage{tikz} % Required for flow chart
 \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
 
+\usepackage{lipsum}
+
 \newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
 \setlength{\itemsep}{1pt}
 \setlength{\parskip}{0pt}
@@ -60,45 +62,48 @@ linewidth=2pt % Width of the border lines around content boxes
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
+\headerbox{Introduction}{name=introduction,column=0,row=0}{
+  \input{sections/introduction}
+}
+
+\headerbox{Problem Statement}{name=problem statement,column=0,below=introduction}{
+  \input{sections/problem_statement}
+}
+
+\headerbox{References}{name=references,column=0,above=bottom, below=problem statement}{
+  \input{sections/references}
+}
+
+
+
 \headerbox{Objectives}{name=objectives,column=1,row=0}{
   \input{sections/objectives}
 }
 
-\headerbox{Introduction}{name=introduction,column=0,row=0,bottomaligned=objectives}{
-  \input{sections/introduction}
+\headerbox{Photon Echoes}{name=echoes,column=1,below=objectives}{
+  \input{sections/results2}
 }
-
-\headerbox{Results 1}{name=results1,column=2,span=2,row=0,bottomaligned=objectives}{
-  \input{sections/results1}
-}
-
-
-\headerbox{References}{name=references,column=0,above=bottom}{
-  \input{sections/references}
-}
-
 
 \headerbox{Conclusion}{name=conclusion,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
   \input{sections/conclusion}
 }
 
 
+
+\headerbox{Rotating Frame Approximation}{name=rwa,column=2,span=2}{
+  \input{sections/rwa}
+}
+
+\headerbox{Coupled dots}{name=coupling,column=2,span=2,below=rwa}{
+  \input{sections/results1}
+}
+
 \headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
   \input{sections/contact_info}
 }
 
 
-\headerbox{Results 2}{name=results2,column=1,span=1,row=0,below=results1,above=references}{
-  \input{sections/results2}
-}
 
-\headerbox{Problem Statement}{name=problem statement,column=0,below=objectives,bottomaligned=results2}{ % This block's bottom aligns with the bottom of the conclusion block
-  \input{sections/problem_statement}
-}
-
-\headerbox{Rotating Frame Approximation}{name=results2,column=2,span=2,below=objectives,bottomaligned=results2}{ % This block's bottom aligns with the bottom of the conclusion block
-  \input{sections/rwa}
-}
 
 %----------------------------------------------------------------------------------------
 
