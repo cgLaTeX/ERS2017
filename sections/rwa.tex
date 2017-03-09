@@ -1,29 +1,12 @@
-Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
-
-\begin{center}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{Table caption}
-
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{Table caption}
-\end{center}
-
+We run into significant constraints on our system due to the need for $\Delta t < \min(\xi \omega_0^{-1}, \Delta r_\text{min}/c)$.  $\Delta$t can be increased by a factor of approximately one-thousand by introducing the rotating-frame approximation.  Eq. (1) can be rewritten in a rotating version as
+\begin{equation}
+  \begin{aligned}
+    i \hbar \pdv{\hat{\rho}_\text{rot}}{t} &= \commutator{\hat{U} \hat{\mathcal{H}} \hat{U}^\dagger - i \hbar \hat{U} \, \partial_t \hat{U}^\dagger}{\hat{\rho}_\text{rot}} - \hat{\mathcal{D}}[\hat{\rho}_\text{rot}] \\
+    &= \commutator{\mqty(0 & \hbar \chi(t)e^{-i \omega_L t} \\ \hbar \chi^*(t) e^{i \omega_L t} & \hbar\qty(\omega_0 - \omega_L))}{\hat{\rho}_\text{rot}} - \hat{\mathcal{D}}[\hat{\rho}_\text{rot}]
+  \end{aligned}
+  \label{eq:rotating liouville}
+\end{equation}
+by bringing about a time-dependent unitary transformation, $\hat{\rho}_\text{rot} = \hat{U}\hat{\rho}\hat{U}^\dagger$, where $\hat{U} \equiv \text{diag}(1, e^{i \omega_L t})$.  Following this transformation, Eq. (3) can be rewritten as
 \begin{equation}
   \begin{gathered}
     \tilde{\vb{E}}_\text{rad}(\vb{r}, t) = -\frac{1}{4\pi \varepsilon} \int
@@ -34,4 +17,5 @@ Treatment 3 & 0.0009271 & 0.296 \\
   \end{gathered}
   \label{eq:radiated envelope}
 \end{equation}
+In the off-diagnol elements of $\hat{\mathcal{H}}_\text{rot}$, $\chi$(t) is governed by $\omega_\text{0}$.  This a high frequency relative to the timescales required to advance the radiation dynamics of the system, therefore we can approximate the integral over this oscillating term to be very small.  The interference phenomena are still conserved in this process and $\Delta$t $\propto$ ($\omega_\text{0}$ - $\omega_\text{L}$)$^{-1}$ rather than $\omega_\text{0}^{-1}$, thus allowing for faster dynamics calculations.
 
